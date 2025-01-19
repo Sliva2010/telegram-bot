@@ -1,9 +1,14 @@
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 import logging
+from dotenv import load_dotenv
 
-# Замените токен на ваш токен бота
-TOKEN = '7999254347:AAGwO81ywSSOt36ciaKHMnsvjVhiPHPTQ7g'
+# Загружаем переменные из .env файла
+load_dotenv()
+
+# Замените на свой токен бота, который будет храниться в переменной окружения
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 
 # Укажите здесь имя вашего канала или его ID
 CHANNEL_ID = '@krinzhLesik'  # Для приватных каналов используйте числовой ID
